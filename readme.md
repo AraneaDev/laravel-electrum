@@ -18,7 +18,7 @@ WARNING: Be safe and never ever put your private keys on a webserver, use a watc
 ## Installation:
 Require this package in your composer.json and update composer. This will download the package.
 ```
-composer require araenadev/laravel-electrum
+composer require araneadev/laravel-electrum
 ```
 After updating composer, add the ServiceProvider to the providers array in config/app.php
 ```
