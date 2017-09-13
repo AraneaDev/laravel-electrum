@@ -2,6 +2,9 @@
 Author: Tim Schipper <info@aranea-development.nl>   
 Description: Electrum support for Laravel with optional Vue wallet component.
 
+![Wallet Web Interface](https://github.com/AraneaDev/laravel-electrum/raw/master/src/assets//wallet.gif "Wallet Web Interface")   
+
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/araneadev/laravel-electrum.svg?style=flat-square)](https://packagist.org/packages/araneadev/laravel-electrum)
 [![GitHub tag](https://img.shields.io/github/tag/AraneaDev/laravel-electrum.svg?style=flat-square)](https://github.com/AraneaDev/laravel-electrum)
 [![Packagist](https://img.shields.io/packagist/l/araneadev/laravel-electrum.svg?style=flat-square)](https://packagist.org/packages/araneadev/laravel-electrum)
