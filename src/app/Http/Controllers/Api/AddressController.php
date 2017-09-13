@@ -6,8 +6,7 @@ use AraneaDev\Electrum\Electrum;
 use App\Http\Controllers\Controller;
 
 /**
- * Class AddressController
- * @package AraneaDev\Electrum\App\Http\Controllers\Api
+ * Class AddressController.
  */
 class AddressController extends Controller
 {

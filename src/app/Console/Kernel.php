@@ -6,8 +6,7 @@ use App\Console\Kernel as ConsoleKernel;
 use Illuminate\Console\Scheduling\Schedule;
 
 /**
- * Class Kernel
- * @package AraneaDev\Electrum\App\Console
+ * Class Kernel.
  */
 class Kernel extends ConsoleKernel
 {
