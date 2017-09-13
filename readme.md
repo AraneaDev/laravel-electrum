@@ -1,4 +1,4 @@
-# Electrum for Laravel 5.5
+# Electrum for Laravel 5.4+
 Author: Tim Schipper <info@aranea-development.nl>   
 Description: Electrum support for Laravel 5.5 with optional Vue wallet component.   
 
@@ -6,7 +6,7 @@ WARNING: Be safe and never ever put your private keys on a webserver, use a watc
    
 ## Requirements:   
 * PHP >=7.0 
-* Laravel >= 5.5
+* Laravel >= 5.4+
 * Electrum >= 2.9.3
 
 ## Setup Electrum
@@ -30,7 +30,7 @@ electrum daemon load_wallet
 * Lodash * >= 4.17.4
 * Bootstrap * >= 3.3.7
 
-_\* Included in Laravel 5.5_
+_\* Included in Laravel 5.4+_
 
 ### Install Clipboard.js, Moment.js and Vue QR Component
 ```
