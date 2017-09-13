@@ -1,6 +1,6 @@
 # Electrum for Laravel 5.4+
 Author: Tim Schipper <info@aranea-development.nl>   
-Description: Electrum support for Laravel 5.5 with optional Vue wallet component.   
+Description: Electrum support for Laravel with optional Vue wallet component.   
 
 WARNING: Be safe and never ever put your private keys on a webserver, use a watch only wallet or even better, get and setup a hardware wallet, so your keys and coins will be safe. 
    
