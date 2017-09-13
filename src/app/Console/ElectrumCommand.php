@@ -2,8 +2,8 @@
 
 namespace AraneaDev\Electrum\App\Console;
 
-use AraneaDev\Electrum\Electrum;
 use Illuminate\Console\Command;
+use AraneaDev\Electrum\Electrum;
 
 /**
  * Class ElectrumCommand.
@@ -48,7 +48,7 @@ class ElectrumCommand extends Command
     {
         $method = $this->argument('method');
 
-        if (!method_exists($this, $method)) {
+        if (! method_exists($this, $method)) {
             $this->info(json_encode($this->electrum->sendRequest($method, $this->get_params())));
         } else {
             $this->$method();

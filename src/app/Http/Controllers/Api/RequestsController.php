@@ -2,9 +2,9 @@
 
 namespace AraneaDev\Electrum\App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use AraneaDev\Electrum\Electrum;
 use Illuminate\Http\Request;
+use AraneaDev\Electrum\Electrum;
+use App\Http\Controllers\Controller;
 
 /**
  * Class RequestsController.
