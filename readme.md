@@ -4,12 +4,12 @@ Description: Electrum support for Laravel 5.5 with optional Vue wallet component
 
 WARNING: Be safe and never ever put your private keys on a webserver, use a watch only wallet or even better, get and setup a hardware wallet, so your keys and coins will be safe. 
    
-##Requirements:   
+## Requirements:   
 * PHP >=7.0 
 * Laravel >= 5.5
 * Electrum >= 2.9.3
 
-##Setup Electrum
+## Setup Electrum
 Download and install [Electrum](https://electrum.org/#download) if you haven't done so yet.
 ```
 electrum create   
@@ -18,9 +18,9 @@ electrum setconfig rpcport 7777
 electrum daemon load_wallet   
 ```
 
-##Optional Web Interface installation
+## Optional Web Interface installation
 
-###Requirements
+### Requirements
 * Clipboard.js >= 1.7.1
 * Moment.js >= 2.4.0
 * Vue * >= 2.1.10
@@ -32,7 +32,7 @@ electrum daemon load_wallet
 
 _\* Included in Laravel 5.5_
 
-###Install Clipboard.js, Moment.js and Vue QR Component
+### Install Clipboard.js, Moment.js and Vue QR Component
 ```
 npm install clipboard --save-dev
 npm install moment --save-dev
@@ -41,7 +41,7 @@ npm install vue-qrcode-component --save-dev
 
 ```
 
-###Publish the assets
+### Publish the assets
 ```
 php artisan vendor:publish --provider=AraneaDev\Electrum\ElectrumServiceProvider
 ```
