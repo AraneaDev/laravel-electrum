@@ -6,16 +6,16 @@ use App\Http\Controllers\Controller;
 use AraneaDev\Electrum\Electrum;
 
 /**
- * Class StatusController
- * @package AraneaDev\Electrum\app\Http\Controllers\Api
+ * Class StatusController.
  */
 class StatusController extends Controller
 {
-    /** @var Electrum  */
+    /** @var Electrum */
     protected $electrum;
 
     /**
      * StatusController constructor.
+     *
      * @param Electrum $electrum
      */
     public function __construct(Electrum $electrum)
@@ -26,7 +26,7 @@ class StatusController extends Controller
 
     /**
      * Get wallet status and ticker data
-     * TODO: Make source configurable
+     * TODO: Make source configurable.
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -36,7 +36,7 @@ class StatusController extends Controller
             'version' => $this->electrum->getVersion(),
             'balance' => $this->electrum->getBalance(),
             'is_sync' => $this->electrum->isSynchronized(),
-            'ticker' => json_decode(file_get_contents('https://blockchain.info/ticker'))
+            'ticker'  => json_decode(file_get_contents('https://blockchain.info/ticker')),
         ]);
     }
 }
