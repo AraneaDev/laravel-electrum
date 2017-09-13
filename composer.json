@@ -1,0 +1,17 @@
+{
+    "name": "araneadev/laravel-electrum",
+    "description": "A Laravel 5.5 wrapper for Electrum",
+    "license": "GPL3",
+    "authors": [
+        {
+            "name": "Tim Schipper",
+            "email": "info@aranea-development.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "5.5.*",
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}
