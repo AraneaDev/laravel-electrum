@@ -1,6 +1,12 @@
 # Electrum for Laravel 5.4+
 Author: Tim Schipper <info@aranea-development.nl>   
-Description: Electrum support for Laravel with optional Vue wallet component.   
+Description: Electrum support for Laravel with optional Vue wallet component.
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/araneadev/laravel-electrum.svg?style=flat-square)](https://packagist.org/packages/araneadev/laravel-electrum)
+[![Build Status](https://img.shields.io/travis/araneadev/laravel-electrum/master.svg?style=flat-square)](https://travis-ci.org/araneadev/laravel-electrum)
+[![StyleCI](https://styleci.io/repos/101933034/shield?branch=master)](https://styleci.io/repos/101933034)
+[![Quality Score](https://img.shields.io/scrutinizer/g/araneadev/laravel-electrum.svg?style=flat-square)](https://scrutinizer-ci.com/g/araneadev/laravel-electrum)
+[![Total Downloads](https://img.shields.io/packagist/dt/araneadev/laravel-electrum.svg?style=flat-square)](https://packagist.org/packages/araneadev/laravel-electrum)   
 
 WARNING: Be safe and never ever put your private keys on a webserver, use a watch only wallet or even better, get and setup a hardware wallet, so your keys and coins will be safe. 
 
