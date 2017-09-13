@@ -7,16 +7,16 @@ use AraneaDev\Electrum\Electrum;
 use Illuminate\Http\Request;
 
 /**
- * Class RequestsController
- * @package AraneaDev\Electrum
+ * Class RequestsController.
  */
 class RequestsController extends Controller
 {
-    /** @var Electrum  */
+    /** @var Electrum */
     protected $electrum;
 
     /**
      * RequestsController constructor.
+     *
      * @param Electrum $electrum
      */
     public function __construct(Electrum $electrum)
@@ -26,7 +26,7 @@ class RequestsController extends Controller
     }
 
     /**
-     * Show all payment requests
+     * Show all payment requests.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -36,9 +36,10 @@ class RequestsController extends Controller
     }
 
     /**
-     * Show a payment request
+     * Show a payment request.
      *
      * @param $address
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function show($address)
@@ -47,17 +48,18 @@ class RequestsController extends Controller
     }
 
     /**
-     * Create a payment request
+     * Create a payment request.
      *
      * @param Request $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function create(Request $request)
     {
         $request->validate([
-            'amount' => 'required|numeric|min:0',
+            'amount'  => 'required|numeric|min:0',
             'expires' => 'required|integer|min:0',
-            'memo' => 'nullable',
+            'memo'    => 'nullable',
         ]);
 
         return response()->json($this->electrum->createRequest(
@@ -68,9 +70,10 @@ class RequestsController extends Controller
     }
 
     /**
-     * Remove a payment request
+     * Remove a payment request.
      *
      * @param $address
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($address)
@@ -79,7 +82,7 @@ class RequestsController extends Controller
     }
 
     /**
-     * Remove all payment requests
+     * Remove all payment requests.
      *
      * @return \Illuminate\Http\JsonResponse
      */

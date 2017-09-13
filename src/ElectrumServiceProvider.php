@@ -8,8 +8,7 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Class ElectrumServiceProvider
- * @package AraneaDev\Electrum
+ * Class ElectrumServiceProvider.
  */
 class ElectrumServiceProvider extends ServiceProvider
 {
@@ -26,7 +25,7 @@ class ElectrumServiceProvider extends ServiceProvider
         // Bind the console commands
         if ($this->app->runningInConsole()) {
             $this->commands([
-                ElectrumCommand::class
+                ElectrumCommand::class,
             ]);
         }
     }
@@ -50,8 +49,9 @@ class ElectrumServiceProvider extends ServiceProvider
         $this->app->make('AraneaDev\Electrum\App\Http\Controllers\IndexController');
 
         // Make the package's custom task scheduling kernel
-        $this->app->singleton('araneadev.electrum.app.console.kernel', function($app) {
+        $this->app->singleton('araneadev.electrum.app.console.kernel', function ($app) {
             $dispatcher = $app->make(Dispatcher::class);
+
             return new Kernel($app, $dispatcher);
         });
         $this->app->make('araneadev.electrum.app.console.kernel');
@@ -61,14 +61,14 @@ class ElectrumServiceProvider extends ServiceProvider
     }
 
     /**
-     * Publish the package assets
+     * Publish the package assets.
      *
      * @return void
      */
     public function publish_assets()
     {
         $this->publishes([
-            __DIR__.'/views' => resource_path('views/vendor/electrum'),
+            __DIR__.'/views'                            => resource_path('views/vendor/electrum'),
             __DIR__.'/resources/assets/js/Electrum.vue' => resource_path('assets/js/vendor/araneadev/Electrum.vue'),
         ], 'assets');
 

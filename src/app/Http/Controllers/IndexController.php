@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use AraneaDev\Electrum\Electrum;
 
 /**
- * Class ElectrumController
- * @package AraneaDev\Electrum
+ * Class ElectrumController.
  */
 class IndexController extends Controller
 {
@@ -20,7 +19,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Show the Electrum interface
+     * Show the Electrum interface.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
