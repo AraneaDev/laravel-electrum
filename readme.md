@@ -4,8 +4,15 @@ Description: Electrum support for Laravel with optional Vue wallet component.
 
 WARNING: Be safe and never ever put your private keys on a webserver, use a watch only wallet or even better, get and setup a hardware wallet, so your keys and coins will be safe. 
 
-
+## Installation:
+Require this package in your composer.json and update composer. This will download the package.
+```
+composer require araenadev/laravel-electrum
+```
+After updating composer, add the ServiceProvider to the providers array in config/app.php
+```
 AraneaDev\Electrum\ElectrumServiceProvider::class,
+```
    
 ## Requirements:   
 * PHP >=7.0 
