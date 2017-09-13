@@ -3,6 +3,9 @@ Author: Tim Schipper <info@aranea-development.nl>
 Description: Electrum support for Laravel with optional Vue wallet component.   
 
 WARNING: Be safe and never ever put your private keys on a webserver, use a watch only wallet or even better, get and setup a hardware wallet, so your keys and coins will be safe. 
+
+
+AraneaDev\Electrum\ElectrumServiceProvider::class,
    
 ## Requirements:   
 * PHP >=7.0 
