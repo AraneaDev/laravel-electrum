@@ -2,7 +2,6 @@
 
 namespace AraneaDev\Electrum\App\Http\Controllers;
 
-use AraneaDev\Electrum\Electrum;
 use App\Http\Controllers\Controller;
 
 /**
@@ -25,8 +24,6 @@ class IndexController extends Controller
      */
     public function __invoke()
     {
-//        $electrum = new Electrum(123);
-//        $electrum->createRequest(0.1,'hoi');
         return view('electrum::index');
     }
 }

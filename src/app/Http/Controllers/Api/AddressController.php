@@ -5,6 +5,10 @@ namespace AraneaDev\Electrum\App\Http\Controllers\Api;
 use AraneaDev\Electrum\Electrum;
 use App\Http\Controllers\Controller;
 
+/**
+ * Class AddressController
+ * @package AraneaDev\Electrum\App\Http\Controllers\Api
+ */
 class AddressController extends Controller
 {
     /** @var Electrum */
