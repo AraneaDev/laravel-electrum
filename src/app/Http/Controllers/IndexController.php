@@ -2,8 +2,8 @@
 
 namespace AraneaDev\Electrum\App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use AraneaDev\Electrum\Electrum;
+use App\Http\Controllers\Controller;
 
 /**
  * Class ElectrumController.

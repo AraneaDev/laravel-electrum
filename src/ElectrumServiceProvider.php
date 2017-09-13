@@ -2,10 +2,10 @@
 
 namespace AraneaDev\Electrum;
 
-use AraneaDev\Electrum\App\Console\ElectrumCommand;
+use Illuminate\Support\ServiceProvider;
 use AraneaDev\Electrum\App\Console\Kernel;
 use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Support\ServiceProvider;
+use AraneaDev\Electrum\App\Console\ElectrumCommand;
 
 /**
  * Class ElectrumServiceProvider.
