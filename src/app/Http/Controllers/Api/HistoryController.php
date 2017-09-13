@@ -6,16 +6,16 @@ use App\Http\Controllers\Controller;
 use AraneaDev\Electrum\Electrum;
 
 /**
- * Class HistoryController
- * @package AraneaDev\Electrum\app\Http\Controllers\Api
+ * Class HistoryController.
  */
 class HistoryController extends Controller
 {
-    /** @var Electrum  */
+    /** @var Electrum */
     protected $electrum;
 
     /**
      * HistoryController constructor.
+     *
      * @param Electrum $electrum
      */
     public function __construct(Electrum $electrum)
@@ -24,7 +24,7 @@ class HistoryController extends Controller
     }
 
     /**
-     * Get the wallet history
+     * Get the wallet history.
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -34,9 +34,10 @@ class HistoryController extends Controller
     }
 
     /**
-     * Get the history for a specific address
+     * Get the history for a specific address.
      *
      * @param $address
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function show($address)
@@ -45,9 +46,10 @@ class HistoryController extends Controller
     }
 
     /**
-     * Get transaction details
+     * Get transaction details.
      *
      * @param $txid
+     *
      * @return object
      */
     public function details($txid)

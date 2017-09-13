@@ -2,16 +2,15 @@
 
 namespace AraneaDev\Electrum\App\Console;
 
-use Illuminate\Console\Command;
 use AraneaDev\Electrum\Electrum;
+use Illuminate\Console\Command;
 
 /**
- * Class ElectrumCommand
- * @package AraneaDev\Electrum
+ * Class ElectrumCommand.
  */
 class ElectrumCommand extends Command
 {
-    /** @var Electrum  */
+    /** @var Electrum */
     protected $electrum;
 
     /**
@@ -30,6 +29,7 @@ class ElectrumCommand extends Command
 
     /**
      * ElectrumCommand constructor.
+     *
      * @param Electrum $electrum
      */
     public function __construct(Electrum $electrum)
@@ -48,7 +48,7 @@ class ElectrumCommand extends Command
     {
         $method = $this->argument('method');
 
-        if(!method_exists($this, $method)) {
+        if (!method_exists($this, $method)) {
             $this->info(json_encode($this->electrum->sendRequest($method, $this->get_params())));
         } else {
             $this->$method();
@@ -56,11 +56,12 @@ class ElectrumCommand extends Command
     }
 
     /**
-     * Returns package author
+     * Returns package author.
      *
      * @return void
      */
-    public function author() {
+    public function author()
+    {
         $this->info('Electrum for Laravel was written by Tim Schipper <info@aranea-development.nl>');
     }
 
