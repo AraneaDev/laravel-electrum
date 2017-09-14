@@ -5,11 +5,11 @@ Description: Electrum support for Laravel with optional Vue wallet component.
 ![Wallet Web Interface](https://raw.githubusercontent.com/AraneaDev/laravel-electrum/master/assets/wallet.gif "Wallet Web Interface")   
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/vpre/araneadev/laravel-electrum.svg?style=flat-square)](https://packagist.org/packages/araneadev/laravel-electrum)
-[![GitHub tag](https://img.shields.io/github/tag/AraneaDev/laravel-electrum.svg?style=flat-square)](https://github.com/AraneaDev/laravel-electrum)
 [![Packagist](https://img.shields.io/packagist/l/araneadev/laravel-electrum.svg?style=flat-square)](https://packagist.org/packages/araneadev/laravel-electrum)
 [![Build Status](https://scrutinizer-ci.com/g/AraneaDev/laravel-electrum/badges/build.png?b=master)](https://scrutinizer-ci.com/g/AraneaDev/laravel-electrum/build-status/master)
 [![StyleCI](https://styleci.io/repos/103412671/shield?branch=master)](https://styleci.io/repos/103412671)
-[![Quality Score](https://img.shields.io/scrutinizer/g/araneadev/laravel-electrum.svg?style=flat-square)](https://scrutinizer-ci.com/g/araneadev/laravel-electrum)   
+[![Quality Score](https://img.shields.io/scrutinizer/g/araneadev/laravel-electrum.svg?style=flat-square)](https://scrutinizer-ci.com/g/araneadev/laravel-electrum)
+[![Total Downloads](https://img.shields.io/packagist/dt/araneadev/laravel-electrum.svg?style=flat-square)](https://packagist.org/packages/araneadev/laravel-electrum)   
 
 WARNING: Be safe and never ever put your private keys on a webserver, use a watch only wallet or even better, get and setup a hardware wallet, so your keys and coins will be safe. 
 
