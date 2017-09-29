@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AraneaDev\\Electrum\\": "src"
+            "AraneaDev\\Electrum\\App\\": "src\\app"
         }
     }
 }
