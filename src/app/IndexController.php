@@ -1,6 +1,6 @@
 <?php
 
-namespace AraneaDev\Electrum\App\Http\Controllers;
+namespace AraneaDev\Electrum\App;
 
 use App\Http\Controllers\Controller;
 

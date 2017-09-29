@@ -46,7 +46,7 @@ class ElectrumServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/views', 'electrum');
 
         // Make the package controller
-        $this->app->make('AraneaDev\Electrum\App\Http\Controllers\IndexController');
+        $this->app->make('AraneaDev\Electrum\App\IndexController');
 
         // Make the package's custom task scheduling kernel
         $this->app->singleton('araneadev.electrum.app.console.kernel', function ($app) {
