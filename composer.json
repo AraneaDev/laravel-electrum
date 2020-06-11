@@ -1,7 +1,7 @@
 {
     "name": "araneadev/laravel-electrum",
     "description": "A Laravel 5.4+ wrapper for Electrum",
-    "license": "GPL3",
+    "license": "MIT",
     "authors": [
         {
             "name": "Tim Schipper",
