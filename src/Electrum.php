@@ -385,6 +385,10 @@ class Electrum
     public function sendRequest($method, $params = [])
     {
         $request = $this->client->request('POST', '/', [
+            'auth' => [
+                config('electrum.user'),
+                config('electrum.pass')
+            ],
             'json' => [
                 'id'     => 'curltext',
                 'method' => $method,
