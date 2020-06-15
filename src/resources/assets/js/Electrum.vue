@@ -446,7 +446,7 @@
                     history = [],
                     total = 0;
 
-                _.each(vm.raw.history.transactions, function (o) {
+                _.each(vm.raw.history, function (o) {
                     total += o.value;
                     o.total = Number(total.toFixed(8));
                     history.push(o);
@@ -546,7 +546,7 @@
 
                 vm.history_is_loaded = false;
                 axios.get('/' + vm.prefix + '/api/history').then((response) => {
-                    Object.assign(vm.raw.history, response.data);
+                    Object.assign(vm.raw.history, response.data.transactions);
                     vm.history_is_loaded = true;
                 }).catch((error) => {
                     console.error(error);
