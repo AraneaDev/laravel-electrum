@@ -446,7 +446,7 @@
                     history = [],
                     total = 0;
 
-                _.each(vm.raw.history, function (o) {
+                _.each(vm.raw.history.transactions, function (o) {
                     total += o.value;
                     o.total = Number(total.toFixed(8));
                     history.push(o);
