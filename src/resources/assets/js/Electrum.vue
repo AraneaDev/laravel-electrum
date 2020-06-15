@@ -34,7 +34,7 @@
 
                 <div class="tab-content">
                     <div id="history" class="tab-pane fade" :class="{'in active': active === '#history'}">
-                        <div v-if="history.length">
+                        <div v-if="history.transactions.length">
                             <div class="table-header"></div>
                             <div class="table-responsive">
                                 <table class="table table-condensed table-striped">
@@ -58,7 +58,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr v-for="transaction in history" @click="getTransactionDetails(transaction)"
+                                    <tr v-for="transaction in history.transactions" @click="getTransactionDetails(transaction)"
                                         class="clickable">
                                         <td class="no-wrap">
                                     <span class="glyphicon"
@@ -68,8 +68,8 @@
                                         <td class="no-wrap" v-text="transaction.date"></td>
                                         <td class="no-remaining" v-text="transaction.txid"></td>
                                         <td class="no-wrap" v-text="transaction.value"
-                                            :class="{'text-danger': transaction.value < 0}"></td>
-                                        <td class="no-wrap" v-text="transaction.total"></td>
+                                            :class="{'text-danger': !transaction.incoming}"></td>
+                                        <td class="no-wrap" v-text="transaction.balance"></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -257,9 +257,9 @@
                         <td class="remaining">{{ transaction.date }}</td>
                     </tr>
                     <tr>
-                        <th class="no-wrap">{{ transaction.value > 0 ? 'Received' : 'Sent' }}:&nbsp;</th>
+                        <th class="no-wrap">{{ transaction.incoming ? 'Received' : 'Sent' }}:&nbsp;</th>
                         <td class="remaining">
-                            {{ transaction.value < 0 ? transaction.value * -1 : transaction.value }} BTC
+                            {{ transaction.value }}
                         </td>
                     </tr>
                     </tbody>
@@ -446,9 +446,7 @@
                     history = [],
                     total = 0;
 
-                _.each(vm.raw.history, function (o) {
-                    total += o.value;
-                    o.total = Number(total.toFixed(8));
+                _.each(vm.raw.history.transactions, function (o) {
                     history.push(o);
                 });
 
@@ -546,7 +544,7 @@
 
                 vm.history_is_loaded = false;
                 axios.get('/' + vm.prefix + '/api/history').then((response) => {
-                    Object.assign(vm.raw.history, response.data.transactions);
+                    Object.assign(vm.raw.history, response.data);
                     vm.history_is_loaded = true;
                 }).catch((error) => {
                     console.error(error);
