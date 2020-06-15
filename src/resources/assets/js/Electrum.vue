@@ -34,7 +34,7 @@
 
                 <div class="tab-content">
                     <div id="history" class="tab-pane fade" :class="{'in active': active === '#history'}">
-                        <div v-if="history.transactions.length">
+                        <div v-if="raw.history.transactions.length">
                             <div class="table-header"></div>
                             <div class="table-responsive">
                                 <table class="table table-condensed table-striped">
@@ -438,19 +438,6 @@
             /** Available currencies in the ticker */
             currencies: function () {
                 return Object.keys(this.ticker);
-            },
-
-            /** Processed history */
-            history: function () {
-                let vm = this,
-                    history = [],
-                    total = 0;
-
-                _.each(vm.raw.history.transactions, function (o) {
-                    history.push(o);
-                });
-
-                return history.reverse();
             },
 
             /** Processed request */
