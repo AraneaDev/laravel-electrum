@@ -34,7 +34,7 @@
 
                 <div class="tab-content">
                     <div id="history" class="tab-pane fade" :class="{'in active': active === '#history'}">
-                        <div v-if="raw.history.transactions.length">
+                        <div v-if="history.length">
                             <div class="table-header"></div>
                             <div class="table-responsive">
                                 <table class="table table-condensed table-striped">
@@ -58,7 +58,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr v-for="transaction in history.transactions" @click="getTransactionDetails(transaction)"
+                                    <tr v-for="transaction in history" @click="getTransactionDetails(transaction)"
                                         class="clickable">
                                         <td class="no-wrap">
                                     <span class="glyphicon"
@@ -425,6 +425,17 @@
             },
         },
         computed: {
+            /** Transaction history */
+            history: function () {
+              return this.raw.history.transactions
+            },
+
+            /** Transaction history */
+            summary: function () {
+                return this.raw.history.summary
+            },
+
+
             /** Loaded status */
             is_loaded: function () {
                 return this.address_is_loaded && this.history_is_loaded && this.requests_are_loaded && this.status_is_loaded;
