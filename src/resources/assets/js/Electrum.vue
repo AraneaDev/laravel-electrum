@@ -109,11 +109,11 @@
                                     </thead>
                                     <tbody>
                                     <tr v-for="request in requests" class="clickable" @click="getRequestDetails(request)">
-                                        <td class="no-wrap" v-text="request.status"></td>
-                                        <td class="no-wrap" v-text="request.date"></td>
+                                        <td class="no-wrap" v-text="request.status_str"></td>
+                                        <td class="no-wrap" v-text="new Date(request.timestamp * 1000).toLocaleString()"></td>
                                         <td class="no-wrap" v-text="request.address"></td>
-                                        <td class="remaining" v-text="request.memo"></td>
-                                        <td class="no-wrap" v-text="request.amount_in_btc"></td>
+                                        <td class="remaining" v-text="request.message"></td>
+                                        <td class="no-wrap" v-text="request.amount_BTC"></td>
                                         <td class="no-wrap">
                                             <button class="btn btn-xs btn-danger" @click.stop.prevent="removeRequest(request)">
                                                 X
