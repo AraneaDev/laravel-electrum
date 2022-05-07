@@ -427,7 +427,7 @@
         computed: {
             /** Transaction history */
             history: function () {
-              return this.raw.history.transactions.reverse()
+              return this.raw.history.transactions ? this.raw.history.transactions.reverse() : []
             },
 
             /** Transaction history */
