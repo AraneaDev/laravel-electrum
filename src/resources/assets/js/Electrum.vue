@@ -435,7 +435,6 @@
                 return this.raw.history.summary
             },
 
-
             /** Loaded status */
             is_loaded: function () {
                 return this.address_is_loaded && this.history_is_loaded && this.requests_are_loaded && this.status_is_loaded;
