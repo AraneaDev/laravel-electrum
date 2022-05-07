@@ -128,7 +128,7 @@ class Electrum
      */
     public function createRequest($amount = 0.00, $memo = '', $expiration = 3600)
     {
-        return $this->sendRequest('addrequest', [
+        return $this->sendRequest('add_request', [
             'amount'     => $amount,
             'memo'       => $memo,
             'expiration' => $expiration,
@@ -142,7 +142,7 @@ class Electrum
      */
     public function getRequests()
     {
-        return $this->sendRequest('listrequests');
+        return $this->sendRequest('list_requests');
     }
 
     /**
@@ -176,7 +176,7 @@ class Electrum
      */
     public function clearRequests()
     {
-        return $this->sendRequest('clearrequests');
+        return $this->sendRequest('clear_requests');
     }
 
     /**
@@ -301,38 +301,6 @@ class Electrum
             'pubkey'    => $public_key,
             'encrypted' => $encrypted,
         ]);
-    }
-
-    /**
-     * Check a seed.
-     *
-     * @param $seed
-     *
-     * @return object
-     */
-    public function checkSeed($seed)
-    {
-        return $this->sendRequest('check_seed', ['seed' => $seed]);
-    }
-
-    /**
-     * Create seed.
-     *
-     * @return object
-     */
-    public function createSeed()
-    {
-        return $this->sendRequest('make_seed');
-    }
-
-    /**
-     * Get seed.
-     *
-     * @return object
-     */
-    public function getSeed()
-    {
-        return $this->sendRequest('getseed');
     }
 
     /**
