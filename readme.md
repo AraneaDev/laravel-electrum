@@ -26,15 +26,28 @@ AraneaDev\Electrum\ElectrumServiceProvider::class,
 ## Requirements:   
 * PHP >=7.0 
 * Laravel >= 5.4+
-* Electrum >= 2.9.3
+* Electrum >= 4.0
 
 ## Setup Electrum
 Download and install [Electrum](https://electrum.org/#download) if you haven't done so yet.
 ```
-electrum create   
-electrum daemon start
-electrum setconfig rpcport 7777   
-electrum daemon load_wallet   
+electrum daemon -d
+electrum setconfig log_to_file true
+electrum setconfig rpchost 127.0.0.1
+electrum setconfig rpcport 7777
+electrum setconfig rpcuser your_user
+electrum setconfig rpcpassword your_password
+electrum stop
+electrum daemon -d
+electrum create
+electrum load_wallet
+```
+And set then following variables in your .env file:
+```
+ELECTRUM_RPC_HOST=http://127.0.0.1
+ELECTRUM_RPC_PORT=7777
+ELECTRUM_RPC_USER=your_user
+ELECTRUM_RPC_PASS=your_password
 ```
 
 ## Optional Web Interface installation
