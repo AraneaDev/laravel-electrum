@@ -1,3 +1,4 @@
 preset: laravel
 
-linting: true
+enabled:
+  - unalign_double_arrow
