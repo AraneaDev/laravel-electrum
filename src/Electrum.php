@@ -113,8 +113,8 @@ class Electrum
     {
         $response = $this->sendRequest('onchain_history');
         $result = @json_decode($response);
-        if (json_last_error() === 0) return $result;
-        return $response;
+        if (json_last_error() === 0) return $result->transactions;
+        return $response->transactions;
     }
 
     /**
