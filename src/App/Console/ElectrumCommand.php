@@ -2,8 +2,8 @@
 
 namespace AraneaDev\Electrum\App\Console;
 
-use Illuminate\Console\Command;
 use AraneaDev\Electrum\Electrum;
+use Illuminate\Console\Command;
 
 /**
  * Class ElectrumCommand.
@@ -30,7 +30,7 @@ class ElectrumCommand extends Command
     /**
      * ElectrumCommand constructor.
      *
-     * @param Electrum $electrum
+     * @param  Electrum  $electrum
      */
     public function __construct(Electrum $electrum)
     {

@@ -2,8 +2,8 @@
 
 namespace AraneaDev\Electrum\App\Api;
 
-use AraneaDev\Electrum\Electrum;
 use App\Http\Controllers\Controller;
+use AraneaDev\Electrum\Electrum;
 
 /**
  * Class StatusController.
@@ -16,7 +16,7 @@ class StatusController extends Controller
     /**
      * StatusController constructor.
      *
-     * @param Electrum $electrum
+     * @param  Electrum  $electrum
      */
     public function __construct(Electrum $electrum)
     {
@@ -36,7 +36,7 @@ class StatusController extends Controller
             'version' => $this->electrum->getVersion(),
             'balance' => $this->electrum->getBalance(),
             'is_sync' => $this->electrum->isSynchronized(),
-            'ticker'  => json_decode(file_get_contents('https://blockchain.info/ticker')),
+            'ticker' => json_decode(file_get_contents('https://blockchain.info/ticker')),
         ]);
     }
 }

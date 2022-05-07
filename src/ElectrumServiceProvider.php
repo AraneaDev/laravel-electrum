@@ -2,10 +2,10 @@
 
 namespace AraneaDev\Electrum;
 
-use Illuminate\Support\ServiceProvider;
+use AraneaDev\Electrum\App\Console\ElectrumCommand;
 use AraneaDev\Electrum\App\Console\Kernel;
 use Illuminate\Contracts\Events\Dispatcher;
-use AraneaDev\Electrum\App\Console\ElectrumCommand;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * Class ElectrumServiceProvider.
@@ -68,7 +68,7 @@ class ElectrumServiceProvider extends ServiceProvider
     public function publish_assets()
     {
         $this->publishes([
-            __DIR__.'/views'                            => resource_path('views/vendor/electrum'),
+            __DIR__.'/views' => resource_path('views/vendor/electrum'),
             __DIR__.'/resources/assets/js/Electrum.vue' => resource_path('assets/js/vendor/araneadev/Electrum.vue'),
         ], 'assets');
 

@@ -2,8 +2,8 @@
 
 namespace AraneaDev\Electrum\App\Api;
 
-use AraneaDev\Electrum\Electrum;
 use App\Http\Controllers\Controller;
+use AraneaDev\Electrum\Electrum;
 
 /**
  * Class AddressController.
@@ -16,7 +16,7 @@ class AddressController extends Controller
     /**
      * AddressController constructor.
      *
-     * @param Electrum $electrum
+     * @param  Electrum  $electrum
      */
     public function __construct(Electrum $electrum)
     {
@@ -37,7 +37,6 @@ class AddressController extends Controller
      * Check if address is in wallet.
      *
      * @param $address
-     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function is_mine($address)
@@ -59,7 +58,6 @@ class AddressController extends Controller
      * Validate the given address.
      *
      * @param $address
-     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function check($address)

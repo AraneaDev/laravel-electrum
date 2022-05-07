@@ -60,7 +60,6 @@ class Electrum
      * Get balance for address.
      *
      * @param $address
-     *
      * @return object
      */
     public function getAddressBalance($address)
@@ -72,7 +71,6 @@ class Electrum
      * Get history for address.
      *
      * @param $address
-     *
      * @return object
      */
     public function getAddressHistory($address)
@@ -84,7 +82,6 @@ class Electrum
      * Get unspent for address.
      *
      * @param $address
-     *
      * @return object
      */
     public function getAddressUnspent($address)
@@ -96,7 +93,6 @@ class Electrum
      * Check whether address is in wallet.
      *
      * @param $address
-     *
      * @return object
      */
     public function isAddressMine($address)
@@ -117,17 +113,16 @@ class Electrum
     /**
      * Create a new payment request.
      *
-     * @param float  $amount
-     * @param string $memo
-     * @param int    $expiration
-     *
+     * @param  float  $amount
+     * @param  string  $memo
+     * @param  int  $expiration
      * @return object
      */
     public function createRequest($amount = 0.00, $memo = '', $expiration = 3600)
     {
         return $this->sendRequest('add_request', [
-            'amount'     => $amount,
-            'memo'       => $memo,
+            'amount' => $amount,
+            'memo' => $memo,
             'expiration' => $expiration,
         ]);
     }
@@ -146,7 +141,6 @@ class Electrum
      * Get a payment request by address.
      *
      * @param $address
-     *
      * @return object
      */
     public function getRequest($address)
@@ -158,7 +152,6 @@ class Electrum
      * Clear a payment request by address.
      *
      * @param $address
-     *
      * @return object
      */
     public function clearRequest($address)
@@ -180,7 +173,6 @@ class Electrum
      * Validate address.
      *
      * @param $address
-     *
      * @return object
      */
     public function validateAddress($address)
@@ -212,7 +204,6 @@ class Electrum
      * Get transaction details.
      *
      * @param $txid
-     *
      * @return object
      */
     public function getTransaction($txid)
@@ -224,7 +215,6 @@ class Electrum
      * Sign a address.
      *
      * @param $address
-     *
      * @return object
      */
     public function signRequest($address)
@@ -236,7 +226,6 @@ class Electrum
      * Broadcast a transaction.
      *
      * @param $tx
-     *
      * @return object
      */
     public function broadcast($tx)
@@ -248,7 +237,6 @@ class Electrum
      * Serialize JSON tx.
      *
      * @param $json
-     *
      * @return object
      */
     public function serialize($json)
@@ -260,7 +248,6 @@ class Electrum
      * Deserialize JSON tx.
      *
      * @param $tx
-     *
      * @return object
      */
     public function deserialize($tx)
@@ -273,14 +260,13 @@ class Electrum
      *
      * @param $public_key
      * @param $message
-     *
      * @return object
      */
     public function encrypt($public_key, $message)
     {
         return $this->sendRequest('encrypt', [
-            'pubkey'    => $public_key,
-            'message'   => $message,
+            'pubkey' => $public_key,
+            'message' => $message,
         ]);
     }
 
@@ -289,13 +275,12 @@ class Electrum
      *
      * @param $public_key
      * @param $encrypted
-     *
      * @return object
      */
     public function decrypt($public_key, $encrypted)
     {
         return $this->sendRequest('decrypt', [
-            'pubkey'    => $public_key,
+            'pubkey' => $public_key,
             'encrypted' => $encrypted,
         ]);
     }
@@ -304,7 +289,6 @@ class Electrum
      * Freeze an address.
      *
      * @param $address
-     *
      * @return object
      */
     public function freeze($address)
@@ -316,7 +300,6 @@ class Electrum
      * Get Electrum config value.
      *
      * @param $key
-     *
      * @return object
      */
     public function getConfig($key)
@@ -329,13 +312,12 @@ class Electrum
      *
      * @param $key
      * @param $value
-     *
      * @return object
      */
     public function setConfig($key, $value)
     {
         return $this->sendRequest('setconfig', [
-            'key'   => $key,
+            'key' => $key,
             'value' => $value,
         ]);
     }
@@ -344,21 +326,20 @@ class Electrum
      * Send a request to the Electrum JSON RPC API.
      *
      * @param $method
-     * @param array $params
+     * @param  array  $params
+     * @return object
      *
      * @throws Exception
-     *
-     * @return object
      */
     public function sendRequest($method, $params = [])
     {
         $request = $this->client->request('POST', '/', [
             'auth' => [
                 config('electrum.user'),
-                config('electrum.pass')
+                config('electrum.pass'),
             ],
             'json' => [
-                'id'     => 'curltext',
+                'id' => 'curltext',
                 'method' => $method,
                 'params' => $params,
             ],

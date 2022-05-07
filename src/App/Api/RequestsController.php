@@ -2,9 +2,9 @@
 
 namespace AraneaDev\Electrum\App\Api;
 
-use Illuminate\Http\Request;
-use AraneaDev\Electrum\Electrum;
 use App\Http\Controllers\Controller;
+use AraneaDev\Electrum\Electrum;
+use Illuminate\Http\Request;
 
 /**
  * Class RequestsController.
@@ -17,7 +17,7 @@ class RequestsController extends Controller
     /**
      * RequestsController constructor.
      *
-     * @param Electrum $electrum
+     * @param  Electrum  $electrum
      */
     public function __construct(Electrum $electrum)
     {
@@ -39,7 +39,6 @@ class RequestsController extends Controller
      * Show a payment request.
      *
      * @param $address
-     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function show($address)
@@ -50,16 +49,15 @@ class RequestsController extends Controller
     /**
      * Create a payment request.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function create(Request $request)
     {
         $request->validate([
-            'amount'  => 'required|numeric|min:0',
+            'amount' => 'required|numeric|min:0',
             'expires' => 'required|integer|min:0',
-            'memo'    => 'nullable',
+            'memo' => 'nullable',
         ]);
 
         return response()->json($this->electrum->createRequest(
@@ -73,7 +71,6 @@ class RequestsController extends Controller
      * Remove a payment request.
      *
      * @param $address
-     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($address)

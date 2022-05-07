@@ -2,8 +2,8 @@
 
 namespace AraneaDev\Electrum\App\Api;
 
-use AraneaDev\Electrum\Electrum;
 use App\Http\Controllers\Controller;
+use AraneaDev\Electrum\Electrum;
 
 /**
  * Class HistoryController.
@@ -16,7 +16,7 @@ class HistoryController extends Controller
     /**
      * HistoryController constructor.
      *
-     * @param Electrum $electrum
+     * @param  Electrum  $electrum
      */
     public function __construct(Electrum $electrum)
     {
@@ -37,7 +37,6 @@ class HistoryController extends Controller
      * Get the history for a specific address.
      *
      * @param $address
-     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function show($address)
@@ -49,7 +48,6 @@ class HistoryController extends Controller
      * Get transaction details.
      *
      * @param $txid
-     *
      * @return object
      */
     public function details($txid)
