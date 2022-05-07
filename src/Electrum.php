@@ -111,7 +111,7 @@ class Electrum
      */
     public function getHistory()
     {
-        $response = $this->sendRequest('list_requests');
+        $response = $this->sendRequest('onchain_history');
         $result = @json_decode($response);
         if (json_last_error() === 0) return $result;
         return $response;
